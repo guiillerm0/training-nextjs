@@ -72,6 +72,7 @@ const FormSchema = z.object({
       `;
     } catch (error) {
       // If a database error occurs, return a more specific error.
+      console.error('Database Error:', error);
       return {
         message: 'Database Error: Failed to Create Invoice.',
       };
@@ -110,6 +111,7 @@ const FormSchema = z.object({
         WHERE id = ${id}
       `;
     } catch (error) {
+      console.error('Database Error:', error);
       return { message: 'Database Error: Failed to Update Invoice.' };
     }
    
